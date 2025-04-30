@@ -7,7 +7,7 @@ title: The MIRAGE Dataset
 description: MIRAGE - Large-Scale Aligned RGB-Thermal Infrared Dataset for Scalable Multispectral Translation
 # baseurl: The subpath of your site
 # > set this to "", if you renamed the repository to <user>.github.io
-baseurl: "/mirage"
+baseurl: "/mirage_web"
 
 # LANDING PAGE
 # username: This will displayed on the landing page as your name.
