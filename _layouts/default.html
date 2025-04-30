@@ -19,6 +19,15 @@
 
   <script src="{{ "/assets/js/vendors.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/assets/js/app.min.js" | prepend: site.baseurl }}"></script>
+
+  <style>
+    #landing::before {
+      background: url('{{ "/assets/mirage/figure1.png" | relative_url }}') no-repeat center center fixed;
+      background-size: cover;
+      filter: brightness(40%);
+    }
+  </style>
+  
 </head>
 
 <body>
