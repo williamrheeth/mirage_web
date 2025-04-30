@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicon/apple-touch-icon.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | prepend: site.baseurl }}">
+  <link rel="manifest" href="{{ "/assets/favicon/site.webmanifest" | prepend: site.baseurl }}">
+
+  <link rel="stylesheet" href="{{ "/assets/css/main.min.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/vendors.min.css" | prepend: site.baseurl }}">
+
+  <script src="{{ "/assets/js/vendors.min.js" | prepend: site.baseurl }}"></script>
+  <script src="{{ "/assets/js/app.min.js" | prepend: site.baseurl }}"></script>
+</head>
+
+<body>
+  <div id="preloader">
+    <div class="load">
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+    </div>
+  </div>
+  {% include landing-page.html %}
+  <div class="layout">
+    {%if site.show_aboutme_card %}
+      <section class="card neumorphism-card-big">
+        {% include section-aboutme.html %}
+      </section>
+    {% endif %}
+
+    <section class="card neumorphism-card-big video-card">
+      <div class="video-container">
+        <video autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.5;">
+          <source src="{{ '/assets/mirage/MIRAGE_video.mp4' | prepend: site.baseurl }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <section class="card neumorphism-card-big">
+      <h1 class="title">Dataset Overview</h1>
+      <p class="description">
+        By carefully filtering and merging previously unaligned sources, MIRAGE achieves a large-scale collection of 547k accurately aligned pairs, providing sufficient scale and diversity for larger translation models.
+      </p>
+  
+      <div class="images">
+        <img src="{{ '/assets/mirage/MIRAGE_samples_negative.png' | prepend: site.baseurl }}" alt="Sample 1">
+      </div>
+    </section>
+
+    <section class="card neumorphism-card-big">
+      <h1 class="title">Interactive Images</h1>
+      <div class="images canvas-compare-wrapper-group">
+
+        <!-- Image Pair 1 -->
+        <img
+          id="compare1"
+          src="{{ '/assets/mirage/rgb1.png' | prepend: site.baseurl }}"
+          data-alt="{{ '/assets/mirage/tir1.png' | prepend: site.baseurl }}"
+          onload="initCompare('compare1')"
+          style="display: none;"
+          alt="RGB1"
+        />
+        <canvas id="compare1Merge"></canvas>
+      
+        <!-- Image Pair 2 -->
+        <img
+          id="compare2"
+          src="{{ '/assets/mirage/rgb2.png' | prepend: site.baseurl }}"
+          data-alt="{{ '/assets/mirage/tir2.png' | prepend: site.baseurl }}"
+          onload="initCompare('compare2')"
+          style="display: none;"
+          alt="RGB2"
+        />
+        <canvas id="compare2Merge"></canvas>
+      
+        <!-- Image Pair 3 -->
+        <img
+          id="compare3"
+          src="{{ '/assets/mirage/rgb3.png' | prepend: site.baseurl }}"
+          data-alt="{{ '/assets/mirage/tir3.png' | prepend: site.baseurl }}"
+          onload="initCompare('compare3')"
+          style="display: none;"
+          alt="RGB3"
+        />
+        <canvas id="compare3Merge"></canvas>
+      
+      </div>
+      
+      <p class="description" style="text-align: center; font-size: 1rem">
+        Move the cursor to compare RGB (left) and TIR (right) images.
+      </p>
+    </section>
+
+    <section class="card neumorphism-card-big">
+      <h1 class="title">RGB-to-TIR Translation</h1>
+      <div class="images">
+        <img src="{{ '/assets/mirage/rgb2tir.gif' | prepend: site.baseurl }}" alt="Sample 1">
+      </div>
+      <p class="description" style="text-align: center;">
+        Benchmark models trained on MIRAGE. Example shown as gif.
+      </p>
+    </section>
+
+    <section class="card neumorphism-card-big">
+      <h1 class="title">TIR-to-RGB Translation</h1>
+      <div class="images">
+        <img src="{{ '/assets/mirage/tir2rgb.gif' | prepend: site.baseurl }}" alt="Sample 1">
+      </div>
+      <p class="description"  style="text-align: center;">
+        Benchmark models trained on MIRAGE. Example shown as gif.
+      </p>
+    </section>
+
+    <section class="card neumorphism-card-big">
+      <h1 class="title">Zero-shot Results</h1>
+      <div class="images">
+        <img src="{{ '/assets/mirage/zero_shot.png' | prepend: site.baseurl }}" alt="Sample 1">
+      </div>
+      <p class="description"  style="text-align: center;">
+        Zero-shot translation results from the same model trained on MIRAGE and other RGB-TIR benchmark datasets. 
+      </p>
+    </section>
+
+    <!-- {%if site.show_skills_card %}
+      <section class="card neumorphism-card-big">
+        {% include section-skills.html %}
+      </section>
+    {% endif %}
+    {%if site.show_timeline_card %}
+      <section class="card neumorphism-card-big">
+        {% include section-timeline.html %}
+      </section>
+    {% endif %}
+    {%if site.show_projects_card %}
+      <section class="card neumorphism-card-big">
+        {% include section-projects.html %}
+      </section>
+    {% endif %} -->
+    {%if site.show_contact_card %}
+    <section class="card neumorphism-card-big">
+      {% include section-contact.html %}
+    </section>
+    {% endif %}
+  </div>
+
+  <script>
+    function initCompare(id) {
+      const img = document.getElementById(id);
+      const canvas = document.getElementById(id + "Merge");
+      const ctx = canvas.getContext("2d");
+    
+      const topImg = new Image();
+      const botImg = new Image();
+      topImg.src = img.src;
+      botImg.src = img.getAttribute("data-alt");
+    
+      let loaded = 0;
+      function checkReady() {
+        if (++loaded < 2) return;
+    
+        canvas.width = topImg.naturalWidth;
+        canvas.height = topImg.naturalHeight;
+        let position = 0.5;
+    
+        function track(e) {
+          const r = canvas.getBoundingClientRect();
+          let x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+          position = Math.min(Math.max(x / r.width, 0), 1);
+        }
+    
+        canvas.addEventListener("mousedown", track);
+        canvas.addEventListener("mousemove", e => e.buttons && track(e));
+        canvas.addEventListener("touchstart", track);
+        canvas.addEventListener("touchmove", track);
+    
+        (function draw() {
+          const w = canvas.width, h = canvas.height;
+          ctx.drawImage(botImg, 0, 0, w, h);
+          const cropW = w * position;
+          ctx.drawImage(topImg, 0, 0, cropW, h, 0, 0, cropW, h);
+    
+          // slider line
+          ctx.beginPath();
+          ctx.moveTo(cropW, 0);
+          ctx.lineTo(cropW, h);
+          ctx.lineWidth = 4;
+          ctx.strokeStyle = "#ffeb3b";
+          ctx.stroke();
+    
+          requestAnimationFrame(draw);
+        })();
+      }
+    
+      topImg.onload = checkReady;
+      botImg.onload = checkReady;
+    }
+    </script>
+    
+    
+  
+
+</body>
+</html>
+

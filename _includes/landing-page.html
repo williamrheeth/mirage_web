@@ -1,0 +1,138 @@
+<div id="landing">
+  <div class="landing-title">
+      <!--<span class="highlight-title">MIRAGE </span>-->
+      <span class="highlight-title">
+        <span class="char-m">M</span>
+        <span class="char-i">I</span>
+        <span class="char-r">R</span>
+        <span class="char-a">A</span>
+        <span class="char-g">G</span>
+        <span class="char-e">E</span>
+      </span>
+      <br>
+    </h1>
+    <h2>
+      <span id="txt-rotate" data-period="150000"
+        data-rotate='["Large-Scale <span class=highlight-yellow>Aligned RGB-Thermal Infrared</span> Dataset<span class=line-break>for Scalable Multispectral Translation"]'>
+      </span>
+    </h2>
+    <h2 style="font-size: 1.25rem;">
+      Dong-Guw Lee<sup>1</sup> &nbsp;&nbsp;&nbsp;  Hyunsoo Jang<sup>1</sup> &nbsp;&nbsp;&nbsp;  Tai Hyoung Rhee<sup>1</sup> &nbsp;&nbsp;&nbsp;  Ukcheol Shin<sup>2</sup> &nbsp;&nbsp;&nbsp;  Ayoung Kim<sup>1,†</sup>
+    </h2>
+    <br>
+    <h2 style="font-size: 0.9rem;">
+      <sup>1</sup> Seoul National University &nbsp;&nbsp;&nbsp; <sup>2</sup> CMU Robotics Institute
+    </h2>
+    <div class="landing-icons">
+      {% if site.email != null %}
+        <a class="social-link email" aria-label="My E-Mail" href="mailto:{{site.email}}">
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/solid.svg#envelope" | prepend: site.baseurl }}""></use>
+            </svg>
+          </div>
+          <span class="label">E-Mail</span>
+        </a>
+      {% endif %}
+
+      {% if site.arxiv_link != null %}
+        <a class="social-link" aria-label="ArXiv link" target="_blank" rel="noreferrer"
+          href="https://{{site.arxiv_link}}"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/brands.svg#readme" | prepend: site.baseurl }}"></use>
+            </svg>
+          </div>
+          <span class="label">ArXiv</span>
+        </a>
+      {% endif %}
+
+      {% if site.github_username != null %}
+        <a class="social-link" aria-label="My GitHub" target="_blank" rel="noreferrer"
+          href="https://github.com/{{site.github_username}}"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/brands.svg#github" | prepend: site.baseurl }}"></use>
+            </svg>
+          </div>
+          <span class="label">GitHub</span>
+        </a>
+      {% endif %}
+
+      {% if site.download_link != null %}
+        <a class="social-link" aria-label="Download link" target="_blank" rel="noreferrer"
+          href="https://{{site.download_link}}"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/brands.svg#google-drive" | prepend: site.baseurl }}"></use>
+            </svg>
+          </div>
+          <span class="label">Download</span>
+        </a>
+      {% endif %}
+
+      {% if site.dev_username != null %}
+        <a class="social-link" aria-label="My DEV" target="_blank" rel="noreferrer"
+          href="https://dev.to/{{site.dev_username}}"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/brands.svg#dev" | prepend: site.baseurl }}"></use>
+            </svg>
+          </div>
+          <span class="label">DEV</span>
+        </a>
+      {% endif %}
+
+      {% if site.linkedin_username != null %}
+        <a class="social-link linkedin" aria-label="My LinkedIn" target="_blank"
+          rel="noreferrer" href="https://www.linkedin.com/in/{{site.linkedin_username}}"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/brands.svg#linkedin-in" | prepend: site.baseurl }}"></use>
+            </svg>
+          </div>
+          <span class="label">LinkedIn</span>
+        </a>
+      {% endif %}
+
+      {% if site.twitter_username != null %}
+        <a class="social-link twitter" aria-label="My Twitter" target="_blank"
+          rel="noreferrer" href="https://twitter.com/{{site.twitter_username}}"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="{{ "/assets/img/brands.svg#twitter" | prepend: site.baseurl }}"></use>
+            </svg>
+          </div>
+          <span class="label">Twitter</span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

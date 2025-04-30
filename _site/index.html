@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>The MIRAGE Dataset</title>
+  <meta name="description" content="MIRAGE - Large-Scale Aligned RGB-Thermal Infrared Dataset for Scalable Multispectral Translation">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+
+  <link rel="stylesheet" href="/assets/css/main.min.css">
+  <link rel="stylesheet" href="/assets/css/vendors.min.css">
+
+  <script src="/assets/js/vendors.min.js"></script>
+  <script src="/assets/js/app.min.js"></script>
+</head>
+
+<body>
+  <div id="preloader">
+    <div class="load">
+      <hr />
+      <hr />
+      <hr />
+      <hr />
+    </div>
+  </div>
+  <div id="landing">
+  <div class="landing-title">
+      <!--<span class="highlight-title">MIRAGE </span>-->
+      <span class="highlight-title">
+        <span class="char-m">M</span>
+        <span class="char-i">I</span>
+        <span class="char-r">R</span>
+        <span class="char-a">A</span>
+        <span class="char-g">G</span>
+        <span class="char-e">E</span>
+      </span>
+      <br>
+    </h1>
+    <h2>
+      <span id="txt-rotate" data-period="150000"
+        data-rotate='["Large-Scale <span class=highlight-yellow>Aligned RGB-Thermal Infrared</span> Dataset<span class=line-break>for Scalable Multispectral Translation"]'>
+      </span>
+    </h2>
+    <h2 style="font-size: 1.25rem;">
+      Dong-Guw Lee<sup>1</sup> &nbsp;&nbsp;&nbsp;  Hyunsoo Jang<sup>1</sup> &nbsp;&nbsp;&nbsp;  Tai Hyoung Rhee<sup>1</sup> &nbsp;&nbsp;&nbsp;  Ukcheol Shin<sup>2</sup> &nbsp;&nbsp;&nbsp;  Ayoung Kim<sup>1,†</sup>
+    </h2>
+    <br>
+    <h2 style="font-size: 0.9rem;">
+      <sup>1</sup> Seoul National University &nbsp;&nbsp;&nbsp; <sup>2</sup> CMU Robotics Institute
+    </h2>
+    <div class="landing-icons">
+      
+
+      
+        <a class="social-link" aria-label="ArXiv link" target="_blank" rel="noreferrer"
+          href="https://rpm.snu.ac.kr"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="/assets/img/brands.svg#readme"></use>
+            </svg>
+          </div>
+          <span class="label">ArXiv</span>
+        </a>
+      
+
+      
+        <a class="social-link" aria-label="My GitHub" target="_blank" rel="noreferrer"
+          href="https://github.com/donkeymouse"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="/assets/img/brands.svg#github"></use>
+            </svg>
+          </div>
+          <span class="label">GitHub</span>
+        </a>
+      
+
+      
+        <a class="social-link" aria-label="Download link" target="_blank" rel="noreferrer"
+          href="https://rpm.snu.ac.kr"
+        >
+          <svg viewBox="0 0 200 200" class="circle">
+            <circle cx="100" cy="100" r="80" />
+          </svg>
+          <div class="social">
+            <svg class="social-svg" viewBox="0 0 48 48">
+              <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="/assets/img/brands.svg#google-drive"></use>
+            </svg>
+          </div>
+          <span class="label">Download</span>
+        </a>
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+</div>
+
+  <div class="layout">
+    
+      <section class="card neumorphism-card-big">
+        <h1 class="title">Abstract</h1>
+<p class="description" style="font-size: 1rem;" data-aos="fade-down">Thermal infrared (TIR) imaging excels in low-visibility conditions, complementing RGB images for robust perception. However, the lack of large-scale, high-quality, aligned RGB-TIR datasets limits progress in multispectral tasks. While generating pseudo-TIR images from abundant RGB data can expand training sets, existing datasets lack the diversity needed to produce realistic TIR images for real-world applications. To address this, we present MIRAGE, a dataset of over 547k aligned RGB-TIR image pairs, covering diverse indoor and outdoor scenes, weather conditions, and sensor platforms. Crucially, MIRAGE includes both 8-bit tone-mapped images and raw 14-bit TIR data, enabling flexible tone-mapping strategies and mitigating biases introduced by fixed intensity transformations. Extensive benchmarks on translation models demonstrate that MIRAGE significantly enhances pixel-level fidelity, perceptual realism, and zero-shot generalization, particularly showcasing scalability for diffusion-based translation architectures. With its scale, diversity, and flexibility, MIRAGE provides a valuable resource for advancing robust multispectral translation methods in both research and practical applications.</p>
+
+      </section>
+    
+
+    <section class="card neumorphism-card-big video-card">
+      <div class="video-container">
+        <video autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.5;">
+          <source src="/assets/mirage/MIRAGE_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <section class="card neumorphism-card-big">
+      <h1 class="title">Dataset Overview</h1>
+      <p class="description">
+        By carefully filtering and merging previously unaligned sources, MIRAGE achieves a large-scale collection of 547k accurately aligned pairs, providing sufficient scale and diversity for larger translation models.
+      </p>
+  
+      <div class="images">
+        <img src="/assets/mirage/MIRAGE_samples_negative.png" alt="Sample 1">
+      </div>
+    </section>
+
+    <section class="card neumorphism-card-big">
+      <h1 class="title">Interactive Images</h1>
+      <div class="images canvas-compare-wrapper-group">
+
+        <!-- Image Pair 1 -->
+        <img
+          id="compare1"
+          src="/assets/mirage/rgb1.png"
+          data-alt="/assets/mirage/tir1.png"
+          onload="initCompare('compare1')"
+          style="display: none;"
+          alt="RGB1"
+        />
+        <canvas id="compare1Merge"></canvas>
+      
+        <!-- Image Pair 2 -->
+        <img
+          id="compare2"
+          src="/assets/mirage/rgb2.png"
+          data-alt="/assets/mirage/tir2.png"
+          onload="initCompare('compare2')"
+          style="display: none;"
+          alt="RGB2"
+        />
+        <canvas id="compare2Merge"></canvas>
+      
+        <!-- Image Pair 3 -->
+        <img
+          id="compare3"
+          src="/assets/mirage/rgb3.png"
+          data-alt="/assets/mirage/tir3.png"
+          onload="initCompare('compare3')"
+          style="display: none;"
+          alt="RGB3"
+        />
+        <canvas id="compare3Merge"></canvas>
+      
+      </div>
+      
+      <p class="description" style="text-align: center; font-size: 1rem">
+        Move the cursor to compare RGB (left) and TIR (right) images.
+      </p>
+    </section>
+
+    <section class="card neumorphism-card-big">
+      <h1 class="title">RGB-to-TIR Translation</h1>
+      <div class="images">
+        <img src="/assets/mirage/rgb2tir.gif" alt="Sample 1">
+      </div>
+      <p class="description" style="text-align: center;">
+        Benchmark models trained on MIRAGE. Example shown as gif.
+      </p>
+    </section>
+
+    <section class="card neumorphism-card-big">
+      <h1 class="title">TIR-to-RGB Translation</h1>
+      <div class="images">
+        <img src="/assets/mirage/tir2rgb.gif" alt="Sample 1">
+      </div>
+      <p class="description"  style="text-align: center;">
+        Benchmark models trained on MIRAGE. Example shown as gif.
+      </p>
+    </section>
+
+    <section class="card neumorphism-card-big">
+      <h1 class="title">Zero-shot Results</h1>
+      <div class="images">
+        <img src="/assets/mirage/zero_shot.png" alt="Sample 1">
+      </div>
+      <p class="description"  style="text-align: center;">
+        Zero-shot translation results from the same model trained on MIRAGE and other RGB-TIR benchmark datasets. 
+      </p>
+    </section>
+
+    <!-- 
+    
+     -->
+    
+    <section class="card neumorphism-card-big">
+      <h1 class="title">Contact</h1>
+<p class="subtitle">Please file an issue on <a class="highlight-link" href="https://github.com/donkeymouse/MIRAGE" target="_blank" rel="noreferrer"> Github </a> for assistance, or contact donkeymouse@snu.ac.kr</p>
+
+<div class="contact-icons">
+  
+
+  
+  <a class="social-link" aria-label="My GitHub" target="_blank" rel="noreferrer"
+    href="https://github.com/donkeymouse">
+    <div class="social">
+      <svg class="social-svg" viewBox="0 0 48 48">
+        <use x="12" y="12" width="24" height="24" viewBox="0 0 48 48" xlink:href="/assets/img/brands.svg#github"></use>
+      </svg>
+    </div>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+</div>
+
+    </section>
+    
+  </div>
+
+  <script>
+    function initCompare(id) {
+      const img = document.getElementById(id);
+      const canvas = document.getElementById(id + "Merge");
+      const ctx = canvas.getContext("2d");
+    
+      const topImg = new Image();
+      const botImg = new Image();
+      topImg.src = img.src;
+      botImg.src = img.getAttribute("data-alt");
+    
+      let loaded = 0;
+      function checkReady() {
+        if (++loaded < 2) return;
+    
+        canvas.width = topImg.naturalWidth;
+        canvas.height = topImg.naturalHeight;
+        let position = 0.5;
+    
+        function track(e) {
+          const r = canvas.getBoundingClientRect();
+          let x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+          position = Math.min(Math.max(x / r.width, 0), 1);
+        }
+    
+        canvas.addEventListener("mousedown", track);
+        canvas.addEventListener("mousemove", e => e.buttons && track(e));
+        canvas.addEventListener("touchstart", track);
+        canvas.addEventListener("touchmove", track);
+    
+        (function draw() {
+          const w = canvas.width, h = canvas.height;
+          ctx.drawImage(botImg, 0, 0, w, h);
+          const cropW = w * position;
+          ctx.drawImage(topImg, 0, 0, cropW, h, 0, 0, cropW, h);
+    
+          // slider line
+          ctx.beginPath();
+          ctx.moveTo(cropW, 0);
+          ctx.lineTo(cropW, h);
+          ctx.lineWidth = 4;
+          ctx.strokeStyle = "#ffeb3b";
+          ctx.stroke();
+    
+          requestAnimationFrame(draw);
+        })();
+      }
+    
+      topImg.onload = checkReady;
+      botImg.onload = checkReady;
+    }
+    </script>
+    
+    
+  
+
+</body>
+</html>
+
