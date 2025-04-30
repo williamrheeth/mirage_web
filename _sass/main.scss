@@ -91,6 +91,10 @@ a {
 .char-g { color: #919191; } // blue
 .char-e { color: #5c5c5c; } // purple
 
+.nowrap-title {
+  white-space: nowrap;
+  display: inline-block;
+}
 
 .video-container {
   display: flex;
