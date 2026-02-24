@@ -19,6 +19,15 @@
 
   <script src="/assets/js/vendors.min.js"></script>
   <script src="/assets/js/app.min.js"></script>
+
+  <style>
+    #landing::before {
+      background: url('/assets/mirage/figure1.png') no-repeat center center fixed;
+      background-size: cover;
+      filter: brightness(40%);
+    }
+  </style>
+  
 </head>
 
 <body>
@@ -33,34 +42,37 @@
   <div id="landing">
   <div class="landing-title">
       <!--<span class="highlight-title">MIRAGE </span>-->
-      <span class="highlight-title">
-        <span class="char-m">M</span>
-        <span class="char-i">I</span>
-        <span class="char-r">R</span>
-        <span class="char-a">A</span>
-        <span class="char-g">G</span>
-        <span class="char-e">E</span>
+      <span class="highlight-title" style="white-space: nowrap; display: inline-block;">
+        <span class="char-r">T</span>
+        <span class="char-r">h</span>
+        <span class="char-r">e</span>
+        <span class="char-r">r</span>
+        <span class="char-t">A</span>
       </span>
       <br>
     </h1>
-    <h2>
+    <h2 style="text-shadow: 0.1rem 0.1rem 0.1rem #000000;">
       <span id="txt-rotate" data-period="150000"
-        data-rotate='["Large-Scale <span class=highlight-yellow>Aligned RGB-Thermal Infrared</span> Dataset<span class=line-break>for Scalable Multispectral Translation"]'>
+        data-rotate='["Thermal-Aware Visual-Language Prompting for<span class=line-break>Controllable RGB-to-Thermal Infrared Translation"]'>
       </span>
     </h2>
-    <h2 style="font-size: 1.25rem;">
-      Dong-Guw Lee<sup>1</sup> &nbsp;&nbsp;&nbsp;  Hyunsoo Jang<sup>1</sup> &nbsp;&nbsp;&nbsp;  Tai Hyoung Rhee<sup>1</sup> &nbsp;&nbsp;&nbsp;  Ukcheol Shin<sup>2</sup> &nbsp;&nbsp;&nbsp;  Ayoung Kim<sup>1,†</sup>
+    <h2 style="font-size: 1.25rem; text-shadow: 0.1rem 0.1rem 0.1rem #000000;">
+      Dong-Guw Lee<sup>1</sup>* &nbsp;&nbsp;&nbsp;  Tai Hyoung Rhee<sup>1</sup>* &nbsp;&nbsp;&nbsp;  Hyunsoo Jang<sup>1</sup><br>Young-sik Shin<sup>2</sup> &nbsp;&nbsp;&nbsp;  Ukcheol Shin<sup>3</sup> &nbsp;&nbsp;&nbsp;  Ayoung Kim<sup>1,†</sup>
     </h2>
     <br>
-    <h2 style="font-size: 0.9rem;">
-      <sup>1</sup> Seoul National University &nbsp;&nbsp;&nbsp; <sup>2</sup> CMU Robotics Institute
+    <h2 style="font-size: 0.9rem;  text-shadow: 0.1rem 0.1rem 0.1rem #000000;">
+      <sup>1</sup> Seoul National University &nbsp;&nbsp;&nbsp; <sup>2</sup> Kyungpook National University &nbsp;&nbsp;&nbsp; <sup>3</sup> KENTECH <br>
+      * Equal contribution &nbsp;&nbsp;&nbsp; <sup>†</sup> Corresponding author
+    </h2>
+    <h2 style="font-size: 2.2rem; font-weight: 700; letter-spacing: 0.04em; text-shadow: 0.1rem 0.1rem 0.1rem #000000;">
+      CVPR 2026
     </h2>
     <div class="landing-icons">
       
 
       
         <a class="social-link" aria-label="ArXiv link" target="_blank" rel="noreferrer"
-          href="https://rpm.snu.ac.kr"
+          href="https://https://arxiv.org/abs/2602.19430"
         >
           <svg viewBox="0 0 200 200" class="circle">
             <circle cx="100" cy="100" r="80" />
@@ -119,7 +131,7 @@
     
       <section class="card neumorphism-card-big">
         <h1 class="title">Abstract</h1>
-<p class="description" style="font-size: 1rem;" data-aos="fade-down">Thermal infrared (TIR) imaging excels in low-visibility conditions, complementing RGB images for robust perception. However, the lack of large-scale, high-quality, aligned RGB-TIR datasets limits progress in multispectral tasks. While generating pseudo-TIR images from abundant RGB data can expand training sets, existing datasets lack the diversity needed to produce realistic TIR images for real-world applications. To address this, we present MIRAGE, a dataset of over 547k aligned RGB-TIR image pairs, covering diverse indoor and outdoor scenes, weather conditions, and sensor platforms. Crucially, MIRAGE includes both 8-bit tone-mapped images and raw 14-bit TIR data, enabling flexible tone-mapping strategies and mitigating biases introduced by fixed intensity transformations. Extensive benchmarks on translation models demonstrate that MIRAGE significantly enhances pixel-level fidelity, perceptual realism, and zero-shot generalization, particularly showcasing scalability for diffusion-based translation architectures. With its scale, diversity, and flexibility, MIRAGE provides a valuable resource for advancing robust multispectral translation methods in both research and practical applications.</p>
+<p class="description" style="font-size: 1rem; text-align: left;" data-aos="fade-down">Despite the inherent advantages of TIR imaging, large-scale data collection and annotation remain a major bottleneck for TIR-based perception. A practical alternative is to synthesize pseudo-TIR data via image translation; however, most RGB-to-TIR approaches heavily rely on RGB-centric priors that overlook thermal physics, yielding implausible heat distributions. In this paper, we introduce TherA, a controllable RGB-to-TIR translation framework that produces diverse and thermally plausible images at both scene and object level. TherA couples TherA-VLM with a latent-diffusion-based translator. Given a single RGB image and a user-prompted condition pair, TherA-VLM yields a thermal-aware embedding that encodes scene, object, material, and heat-emission context reflecting the input scene-condition pair. Conditioning the diffusion model on this embedding enables realistic \ac{TIR} synthesis and fine-grained control across time of day, weather, and object state. Compared to other baselines, TherA achieves state-of-the-art translation performance, demonstrating improved zero-shot translation performance up to 33% increase averaged across all metrics.</p>
 
       </section>
     

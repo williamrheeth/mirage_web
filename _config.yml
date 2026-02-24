@@ -26,7 +26,7 @@ dev_username:
 linkedin_username: 
 twitter_username: 
 
-arxiv_link: rpm.snu.ac.kr
+arxiv_link: https://arxiv.org/abs/2602.19430
 download_link: rpm.snu.ac.kr
 
 # ABOUT ME SECTION
@@ -37,8 +37,7 @@ show_aboutme_card: true
 # about_me_title: The will be displayed as the title in the About Me section
 about_me_title: Abstract
 # about_me_description: This will be displayed under the title.
-about_me_description: Thermal infrared (TIR) imaging excels in low-visibility conditions, complementing RGB images for robust perception. However, the lack of large-scale, high-quality, aligned RGB-TIR datasets limits progress in multispectral tasks. While generating pseudo-TIR images from abundant RGB data can expand training sets, existing datasets lack the diversity needed to produce realistic TIR images for real-world applications. To address this, we present MIRAGE, a dataset of over 547k aligned RGB-TIR image pairs, covering diverse indoor and outdoor scenes, weather conditions, and sensor platforms. Crucially, MIRAGE includes both 8-bit tone-mapped images and raw 14-bit TIR data, enabling flexible tone-mapping strategies and mitigating biases introduced by fixed intensity transformations. Extensive benchmarks on translation models demonstrate that MIRAGE significantly enhances pixel-level fidelity, perceptual realism, and zero-shot generalization, particularly showcasing scalability for diffusion-based translation architectures. With its scale, diversity, and flexibility, MIRAGE provides a valuable resource for advancing robust multispectral translation methods in both research and practical applications.
-
+about_me_description: Despite the inherent advantages of TIR imaging, large-scale data collection and annotation remain a major bottleneck for TIR-based perception. A practical alternative is to synthesize pseudo-TIR data via image translation; however, most RGB-to-TIR approaches heavily rely on RGB-centric priors that overlook thermal physics, yielding implausible heat distributions. In this paper, we introduce TherA, a controllable RGB-to-TIR translation framework that produces diverse and thermally plausible images at both scene and object level. TherA couples TherA-VLM with a latent-diffusion-based translator. Given a single RGB image and a user-prompted condition pair, TherA-VLM yields a thermal-aware embedding that encodes scene, object, material, and heat-emission context reflecting the input scene-condition pair. Conditioning the diffusion model on this embedding enables realistic \ac{TIR} synthesis and fine-grained control across time of day, weather, and object state. Compared to other baselines, TherA achieves state-of-the-art translation performance, demonstrating improved zero-shot translation performance up to 33% increase averaged across all metrics.
 # SKILLS SECTION
 # show_skills_card:
 # > setting this to true, will display the Skills section

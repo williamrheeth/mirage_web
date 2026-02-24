@@ -61,8 +61,8 @@ a {
 
 .highlight-title {
   color: $primary-color;
-  text-shadow: 0.2rem 0.2rem 0.2rem $primary-color;
-  font-size: 6rem;
+  //text-shadow: 0.1rem 0.1rem 0.1rem $primary-color;
+  font-size: 6.5rem;
 }
 
 .highlight-link {
@@ -84,12 +84,12 @@ a {
   font-weight: bold;
 }
 
-.char-m { color: #ff073a; } // red
-.char-i { color: #44ff00; } // orange
-.char-r { color: #315eff; } // yellow
-.char-a { color: #ffffff; } // green
-.char-g { color: #919191; } // blue
-.char-e { color: #5c5c5c; } // purple
+.char-t { color: #ff073a; } // red
+.char-h { color: #44ff00; } // orange
+.char-e { color: #315eff; } // yellow
+.char-r { color: #ffffff; } // green
+.char-a { color: #919191; } // blue
+//.char-e { color: #5c5c5c; } // purple
 
 .nowrap-title {
   white-space: nowrap;
@@ -441,7 +441,7 @@ a {
   padding: 0.5rem;
   position: absolute;
   right: 0;
-  top: 20%;
+  top: 8%;
 }
 
 .landing-icons {
