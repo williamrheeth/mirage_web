@@ -190,6 +190,34 @@ a {
   }
 }
 
+.weather-mode-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.tir-mode-btn {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.tir-mode-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.tir-mode-btn.is-active {
+  background: #ffeb3b;
+  color: #111;
+  border-color: #ffeb3b;
+}
+
 .compare-img {
   width: 100%;
   height: 100%;
@@ -422,7 +450,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('{{ "/assets/mirage/figure1.png" | relative_url }}') no-repeat center center fixed;
+    background: url('{{ "/assets/thera/thera_fig1.jpg" | relative_url }}') no-repeat center center fixed;
     background-size: cover;
     filter: brightness(40%); // <— THIS makes only the image 50% dark
     z-index: 0;

@@ -22,7 +22,7 @@
 
   <style>
     #landing::before {
-      background: url('/assets/mirage/figure1.png') no-repeat center center fixed;
+      background: url('/assets/thera/thera_fig1.jpg') no-repeat center center fixed;
       background-size: cover;
       filter: brightness(40%);
     }
@@ -131,7 +131,7 @@
     
       <section class="card neumorphism-card-big">
         <h1 class="title">Abstract</h1>
-<p class="description" style="font-size: 1rem; text-align: left;" data-aos="fade-down">Despite the inherent advantages of TIR imaging, large-scale data collection and annotation remain a major bottleneck for TIR-based perception. A practical alternative is to synthesize pseudo-TIR data via image translation; however, most RGB-to-TIR approaches heavily rely on RGB-centric priors that overlook thermal physics, yielding implausible heat distributions. In this paper, we introduce TherA, a controllable RGB-to-TIR translation framework that produces diverse and thermally plausible images at both scene and object level. TherA couples TherA-VLM with a latent-diffusion-based translator. Given a single RGB image and a user-prompted condition pair, TherA-VLM yields a thermal-aware embedding that encodes scene, object, material, and heat-emission context reflecting the input scene-condition pair. Conditioning the diffusion model on this embedding enables realistic \ac{TIR} synthesis and fine-grained control across time of day, weather, and object state. Compared to other baselines, TherA achieves state-of-the-art translation performance, demonstrating improved zero-shot translation performance up to 33% increase averaged across all metrics.</p>
+<p class="description" style="font-size: 1rem; text-align: left;" data-aos="fade-down">Despite the inherent advantages of TIR imaging, large-scale data collection and annotation remain a major bottleneck for TIR-based perception. A practical alternative is to synthesize pseudo-TIR data via image translation; however, most RGB-to-TIR approaches heavily rely on RGB-centric priors that overlook thermal physics, yielding implausible heat distributions. In this paper, we introduce TherA, a controllable RGB-to-TIR translation framework that produces diverse and thermally plausible images at both scene and object level. TherA couples TherA-VLM with a latent-diffusion-based translator. Given a single RGB image and a user-prompted condition pair, TherA-VLM yields a thermal-aware embedding that encodes scene, object, material, and heat-emission context reflecting the input scene-condition pair. Conditioning the diffusion model on this embedding enables realistic TIR synthesis and fine-grained control across time of day, weather, and object state. Compared to other baselines, TherA achieves state-of-the-art translation performance, demonstrating improved zero-shot translation performance up to 33% increase averaged across all metrics.</p>
 
       </section>
     
@@ -139,32 +139,25 @@
     <section class="card neumorphism-card-big video-card">
       <div class="video-container">
         <video autoplay muted loop playsinline onloadedmetadata="this.playbackRate = 2.5;">
-          <source src="/assets/mirage/MIRAGE_video.mp4" type="video/mp4">
+          <source src="/assets/thera/thera_video.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
     </section>
 
     <section class="card neumorphism-card-big">
-      <h1 class="title">Dataset Overview</h1>
-      <p class="description">
-        By carefully filtering and merging previously unaligned sources, MIRAGE achieves a large-scale collection of 547k accurately aligned pairs, providing sufficient scale and diversity for larger translation models.
-      </p>
-  
-      <div class="images">
-        <img src="/assets/mirage/MIRAGE_samples_negative.png" alt="Sample 1">
-      </div>
-    </section>
-
-    <section class="card neumorphism-card-big">
-      <h1 class="title">Interactive Images</h1>
+      <h1 class="title">Translated Images - Interactive Images</h1>
       <div class="images canvas-compare-wrapper-group">
 
         <!-- Image Pair 1 -->
         <img
           id="compare1"
-          src="/assets/mirage/rgb1.png"
-          data-alt="/assets/mirage/tir1.png"
+          src="/assets/thera/rgb1.png"
+          data-alt="/assets/thera/tir1.png"
+          data-alt-original="/assets/thera/tir1.png"
+          data-alt-sunny="/assets/thera/tir1_sunny.png"
+          data-alt-cloudy="/assets/thera/tir1_cloudy.png"
+          data-alt-rainy="/assets/thera/tir1_rainy.png"
           onload="initCompare('compare1')"
           style="display: none;"
           alt="RGB1"
@@ -174,8 +167,12 @@
         <!-- Image Pair 2 -->
         <img
           id="compare2"
-          src="/assets/mirage/rgb2.png"
-          data-alt="/assets/mirage/tir2.png"
+          src="/assets/thera/rgb2.png"
+          data-alt="/assets/thera/tir2.png"
+          data-alt-original="/assets/thera/tir2.png"
+          data-alt-sunny="/assets/thera/tir2_sunny.png"
+          data-alt-cloudy="/assets/thera/tir2_cloudy.png"
+          data-alt-rainy="/assets/thera/tir2_rainy.png"
           onload="initCompare('compare2')"
           style="display: none;"
           alt="RGB2"
@@ -185,8 +182,12 @@
         <!-- Image Pair 3 -->
         <img
           id="compare3"
-          src="/assets/mirage/rgb3.png"
-          data-alt="/assets/mirage/tir3.png"
+          src="/assets/thera/rgb3.png"
+          data-alt="/assets/thera/tir3.png"
+          data-alt-original="/assets/thera/tir3.png"
+          data-alt-sunny="/assets/thera/tir3_sunny.png"
+          data-alt-cloudy="/assets/thera/tir3_cloudy.png"
+          data-alt-rainy="/assets/thera/tir3_rainy.png"
           onload="initCompare('compare3')"
           style="display: none;"
           alt="RGB3"
@@ -197,38 +198,32 @@
       
       <p class="description" style="text-align: center; font-size: 1rem">
         Move the cursor to compare RGB (left) and TIR (right) images.
+        <br><br>
+        Controllability Panel: Click buttons to switch TIR images under different weather conditions.
       </p>
+      <div class="weather-mode-buttons">
+        <button type="button" class="tir-mode-btn is-active" onclick="setCompareWeather('original')" data-mode="original">Original</button>
+        <button type="button" class="tir-mode-btn" onclick="setCompareWeather('sunny')" data-mode="sunny">Sunny</button>
+        <button type="button" class="tir-mode-btn" onclick="setCompareWeather('cloudy')" data-mode="cloudy">Cloudy</button>
+        <button type="button" class="tir-mode-btn" onclick="setCompareWeather('rainy')" data-mode="rainy">Rainy</button>
+      </div>
     </section>
 
+
     <section class="card neumorphism-card-big">
-      <h1 class="title">RGB-to-TIR Translation</h1>
+      <h1 class="title">Baseline Results</h1>
       <div class="images">
-        <img src="/assets/mirage/rgb2tir.gif" alt="Sample 1">
+        <img src="/assets/thera/baseline1.png" alt="Sample 1">
       </div>
       <p class="description" style="text-align: center;">
-        Benchmark models trained on MIRAGE. Example shown as gif.
+        Zero-shot RGB-to-TIR translation baseline results comparison on RGB-TIR dataset. 
       </p>
+      <div class="images">
+        <img src="/assets/thera/baseline2.png" alt="Sample 2">
+        Zero-shot RGB-to-TIR translation baseline results comparison on RGB-only dataset.
+      </div>
     </section>
 
-    <section class="card neumorphism-card-big">
-      <h1 class="title">TIR-to-RGB Translation</h1>
-      <div class="images">
-        <img src="/assets/mirage/tir2rgb.gif" alt="Sample 1">
-      </div>
-      <p class="description"  style="text-align: center;">
-        Benchmark models trained on MIRAGE. Example shown as gif.
-      </p>
-    </section>
-
-    <section class="card neumorphism-card-big">
-      <h1 class="title">Zero-shot Results</h1>
-      <div class="images">
-        <img src="/assets/mirage/zero_shot.png" alt="Sample 1">
-      </div>
-      <p class="description"  style="text-align: center;">
-        Zero-shot translation results from the same model trained on MIRAGE and other RGB-TIR benchmark datasets. 
-      </p>
-    </section>
 
     <!-- 
     
@@ -266,6 +261,8 @@
   </div>
 
   <script>
+    const compareInstances = new Map();
+
     function initCompare(id) {
       const img = document.getElementById(id);
       const canvas = document.getElementById(id + "Merge");
@@ -274,7 +271,8 @@
       const topImg = new Image();
       const botImg = new Image();
       topImg.src = img.src;
-      botImg.src = img.getAttribute("data-alt");
+      botImg.src = img.getAttribute("data-alt-original") || img.getAttribute("data-alt");
+      compareInstances.set(id, { botImg });
     
       let loaded = 0;
       function checkReady() {
@@ -316,6 +314,24 @@
       topImg.onload = checkReady;
       botImg.onload = checkReady;
     }
+
+    function setCompareWeather(mode) {
+      const modeKey = "alt" + mode.charAt(0).toUpperCase() + mode.slice(1);
+      document.querySelectorAll(".tir-mode-btn").forEach((button) => {
+        button.classList.toggle("is-active", button.getAttribute("data-mode") === mode);
+      });
+
+      document.querySelectorAll("img[id^='compare']").forEach((img) => {
+        const nextAlt = img.dataset[modeKey];
+        if (!nextAlt) return;
+
+        img.setAttribute("data-alt", nextAlt);
+        const instance = compareInstances.get(img.id);
+        if (instance) {
+          instance.botImg.src = nextAlt;
+        }
+      });
+    }
     </script>
     
     
@@ -323,4 +339,3 @@
 
 </body>
 </html>
-
