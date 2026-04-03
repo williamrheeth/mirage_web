@@ -4,7 +4,7 @@
 # title: This will be displayed as the website's name in your browser tab.
 title: TherA
 # description: This will be meta HTML tag content. This can be ignored.
-description: TherA: Thermal-Aware Visual-Language Prompting for Controllable RGB-to-Thermal Infrared Translation
+description: TherA Thermal-Aware Visual-Language Prompting for Controllable RGB-to-Thermal Infrared Translation
 # baseurl: The subpath of your site
 # > set this to "", if you renamed the repository to <user>.github.io
 baseurl: "/thera_web"
