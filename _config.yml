@@ -2,16 +2,16 @@
 
 # GENERAL SITE SETTINGS
 # title: This will be displayed as the website's name in your browser tab.
-title: The MIRAGE Dataset
+title: TherA
 # description: This will be meta HTML tag content. This can be ignored.
-description: MIRAGE - Large-Scale Aligned RGB-Thermal Infrared Dataset for Scalable Multispectral Translation
+description: TherA: Thermal-Aware Visual-Language Prompting for Controllable RGB-to-Thermal Infrared Translation
 # baseurl: The subpath of your site
 # > set this to "", if you renamed the repository to <user>.github.io
-baseurl: "/mirage_web"
+baseurl: "/thera_web"
 
 # LANDING PAGE
 # username: This will displayed on the landing page as your name.
-username: MIRAGE
+username: TherA
 # typing_text: This will be typed before 'scroll down for more'.
 # > set this to your job title, e.g. Fullstack Developer
 typing_text: Jekyll Theme
@@ -26,7 +26,7 @@ dev_username:
 linkedin_username: 
 twitter_username: 
 
-arxiv_link: https://arxiv.org/abs/2602.19430
+arxiv_link: arxiv.org/abs/2602.19430
 download_link: rpm.snu.ac.kr
 
 # ABOUT ME SECTION
@@ -83,12 +83,12 @@ show_contact_card: true
 # contact_title: The will be displayed as the title in the Contact section
 contact_title: Contact
 # contact_description: This will be displayed under the title.
-contact_description: Please file an issue on <a class="highlight-link" href="https://github.com/donkeymouse/MIRAGE" target="_blank" rel="noreferrer"> Github </a> for assistance, or contact donkeymouse@snu.ac.kr
+contact_description: Please file an issue on <a class="highlight-link" href="https://github.com/donkeymouse/TherA" target="_blank" rel="noreferrer"> Github </a> for assistance, or contact donkeymouse@snu.ac.kr
 
 # GITHUB-METADATA
 # Set this to your forked repository
 # > e.g. <user>/<user>.github.io
-repository: williamrheeth/mirage.github.io
+repository: williamrheeth/thera_web.github.io
 projects:
   # sortby:
   # > set this to pushed, if you want to sort your github repositories by time.
